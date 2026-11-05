@@ -20,6 +20,8 @@ COPY --chown=www-data:www-data . /var/www/html
 # Copy compiled frontend assets from Stage 1
 COPY --chown=www-data:www-data --from=frontend /app/public/build /var/www/html/public/build
 
+WORKDIR /var/www/html
+
 USER www-data
 
 # Install production PHP dependencies
